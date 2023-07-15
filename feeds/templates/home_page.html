@@ -1,0 +1,250 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>B A D A L &nbsp; P A N W A R</title>
+    <link rel="icon" href="{% static 'images/B.png' %}">
+    <link rel="icon" href="/Assets/img/15.jpg">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!-- links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <!-- <link rel="preload" href="{% static 'images/fonts/Agustina.21f233e1.woff' %}" as="font" type="font/woff" crossorigin=""> -->
+    <!-- <script src="https://use.fontawesome.com/66c3c19309.js"></script> -->
+    <script src="https://kit.fontawesome.com/d96c96d99b.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/ionicons@5.5.3/dist/ionicons.js"></script>
+    <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"> -->
+    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
+    <!-- links -->
+</head>
+
+
+<body style="padding: 60px;" data-aos-easing="ease" data-aos-duration="1500" data-aos-delay="0">
+    <!-- <li><i class="uil uil-moon change-theme" id="theme-button"></i></li> -->
+    <button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>
+    <header id="header" class="fixed-top ">
+        <div class="container-fluid  navbur">
+
+            <div class="navi">
+                <div class="col-xl-12 d-flex align-items-right lefty">
+                    <h1 class="logo mr-auto"><a href="#"><img src="/media/images/B.png" alt="" ></a></h1>
+
+                    <nav class="nav-menu d-none d-lg-block float-right">
+                        <ul>
+                            <li class="active"><a href="#home">Home</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#work">Work</a></li>
+                            <li><a href="#blog">Blogs</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <!-- <div class="invert pl-4 " id="theme-button"> -->
+                                <!-- <ion-icon name='contrast-outline' style="color:rgb(17, 190, 221)"></ion-icon> -->
+                            </div>
+                          
+                        </ul>
+
+                    </nav>
+
+                    <div class="changed mx-3"><i class="icofont-ui-brightness change-theme" id="theme-button"></i></div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class=" descript "  id="home">
+        <div class="container-fluid" >
+
+            <div >
+                <div style="padding: 50px;" class="row">
+                    <div class="col-md-7 initial-0 aos-init " data-aos="zoom-in" data-aos-delay="200" >
+                        <p id="hey"><font style="color: #03f7ff;">Hi, my name is </font></p>
+                        {% for infor in info %}
+                        <h1 id="name"><font style="font-family: sans-serif; font-style:bold; font-size: 70px; color: #d0d5f7">{{infor.name_complete}}</font> </h1>
+                        <h3><font style="font-family: sans-serif; font-style:bold; font-size: 70px; color: #6a719e;">I build things for the web.</font></h3>
+                        <p> <span id="big"></span><font style="font-family: sans-serif; color: #6a719e;">{{infor.mini_about}}</font></p>
+
+                        <div class="button">
+                            <a href="#contact"> <button class="main-button2">Contact me <i class="uil uil-message"style="" ></i>  </button></a>
+                            <a class="main-button ml-2" href="{% url 'resume' %}" target="_blank" rel="noopener noreferrer"> <button id="btn2">Resume <i class="fa-regular fa-file"></i></i>
+                            </button></a>
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-5 initial-1 aos-init" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="/media/{{infor.avatar}}" alt="" >
+                    </div>
+                    {% endfor %}
+                    <br>
+                    <br>
+                    <br>
+                    <br>    
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    </section>
+        <div class="skills">
+            <div class="container-fluid" id="skills">
+                <div class="title2">
+                    <h1>SKILLS</h1>
+                </div>
+                <div class="small-container">
+                    <div class="row3">
+                        {% for sys in skills %}
+                            <div class="skimg" data-aos="zoom-in" data-aos-delay="200">
+    
+                            <img src="media/{{sys.img}}" alt="" width="85" height="85">
+    
+                            <!-- <h3 style="font-size:25px;color:wheat;" >{{sys.skill}}</h3>     -->
+    
+                        </div>
+                        {% endfor %}
+    
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+
+
+    <div class="work">
+        <div class="container-fluid" id="work">
+            <div class="title2">
+                <h1>WORK</h1>
+            </div>
+            <div class="small-container">
+                <div class="row3">
+                    {% for sys in work %}
+                    <div class="card initial-6  w- aos-init" data-aos="zoom-in" data-aos-delay="200">
+
+                        <img src="media/{{sys.image}}" alt="">
+
+                        <div class="card-body col-5-info px-3 py-3">
+                            <h3 class="pb-1">{{sys.title}}</h3>
+                            <p class="pb-1">{{sys.skill}}</p>
+                            <button><a href="{{sys.link}}" target="_blank"><font  style="color: #03f7ff;">Visit</font></a></button>
+
+                        </div>
+
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="work">
+        <div class="container-fluid" id="blog">
+            <div class="title2">
+                <h1>BLOGS</h1>
+            </div>
+            <div class="small-container">
+                <div class="row3">
+                    {% for sys in blogs %}
+                    <div class="card initial-6  w- aos-init" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="media/{{sys.img}}" alt="" width="100px" height="100px">
+
+                        <div class="card-body col-5-info px-3 py-3">
+                            <p class="pb-1">{{sys.title}}</p>
+                            <button><a href="{{sys.url}}"><font  style="color: #03f7ff;">Read</font></a></button>
+
+                        </div>
+
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer id="contact">
+        <div class="container-fluid">
+            <div class="title5">
+                <h1>CONTACT ME</h1>
+            </div>
+            <div >
+                <div class="row4">
+                    {% for infor in contact %}
+   
+                    <div class="col-md-5 initial-8 aos-init" data-aos="fade-down-right" data-aos-delay="200">
+                        <p id="helo">Wanna talk about a project or just saying hi <img src="{%  static 'images/e.png' %}" alt="" id="e" class="wave"></p>
+
+                        <div class="contact-info">
+                            <div class="c-ico">
+                    <i class="fa fa-comments"></i> <span id="io">Say Hello</span></i>
+
+                            </div>
+                            <p>Email: <span>{{infor.email}}</span></p>
+                        </div>
+                        <div class="contact-info">
+                            <div class="c-ico">
+                                <i class="fa fa-map-marker"></i><span id="io">Find me in</span>
+                            </div>
+                            <p><span>{{infor.address}}</span></p>
+
+                        </div>
+                        <div class="contact-info obojo">
+                            <div class="c-ico">
+                                <i class="fa fa-share-square-o"> <span id="io">Social networks</span> </i>
+                            </div>
+                            <h4>
+                                  <a href="{{infor.linkedin}}" class="m1"> <i class="fa-brands fa-linkedin fa-bounce"></i></a>
+                                  <a href="{{infor.github}}"><i class="fa-brands fa-github fa-bounce"></i></a>
+                                  <a href="{{infor.medium}}"><i class="fa-brands fa-medium fa-bounce"></i></a>
+                            </h4>
+
+                        </div>
+                    </div>
+                    <div class=" col-md-7 initial-7 aos-init " data-aos="zoom-in " data-aos-delay="200 ">
+                        <img src="/media/images/foot.png" alt=" " height="370">
+                    </div>
+                 {% endfor %}
+                </div>
+                    </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="up-arrow ">
+            <div class="arrow ">
+                <a href="# "><i class="fa-solid fa-angle-up "></i>
+            </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="preloader"></div>
+    <script src="{% static 'jquery/jquery.min.js' %}"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'jquery.easing/jquery.easing.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
