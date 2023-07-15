@@ -1,7 +1,6 @@
 from django.db import models
 
 from django.db import models
-from ckeditor.fields import RichTextField
 
 class PersonalInformation(models.Model):
     name_complete = models.CharField(max_length=50, blank=True, null=True)
